@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Spirit of Japan — Guest Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f2ede4;font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:20px 12px 40px}
+.wrap{max-width:480px;width:100%}
+.dots{display:flex;gap:5px;justify-content:center;padding:14px 0 10px;flex-wrap:wrap}
+.dot{width:7px;height:7px;border-radius:50%;background:#c5bfb3;cursor:pointer;border:none;transition:all .2s;flex-shrink:0}
+.dot.on{background:#2c3e6b;transform:scale(1.3)}
+.pg{display:none;animation:fi .3s ease}
+.pg.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cover{background:#2c3e6b;border-radius:18px;padding:44px 28px 36px;text-align:center;box-shadow:0 4px 32px rgba(44,62,107,.18)}
+.mon{width:64px;height:64px;margin:0 auto 22px;border:2px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px}
+.cv-l{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.4);margin-bottom:16px}
+.cv-t{font-size:24px;font-weight:500;color:#fff;line-height:1.4;margin-bottom:6px}
+.cv-s{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;letter-spacing:1px}
+.cv-p{font-size:14px;color:rgba(255,255,255,.72);line-height:2.05;margin-bottom:28px}
+.lang-row{display:flex;gap:8px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.lbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);font-size:12px;padding:7px 16px;border-radius:100px;cursor:pointer;transition:all .2s}
+.lbtn:hover{background:rgba(255,255,255,.18)}
+.lbtn.active{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.6);color:#fff;font-weight:500}
+.sbtn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:13px;letter-spacing:2px;padding:12px 28px;border-radius:100px;cursor:pointer;transition:all .2s}
+.sbtn:hover{background:rgba(255,255,255,.22)}
+.card{background:#fff;border-radius:18px;box-shadow:0 2px 20px rgba(0,0,0,.07);overflow:hidden}
+.ch-hd{padding:26px 22px 16px;border-bottom:1px solid #f0ece6}
+.ch-n{font-size:11px;letter-spacing:3px;color:#9a948a;margin-bottom:5px}
+.ch-t{font-size:19px;font-weight:500;color:#1a1814;margin-bottom:4px;line-height:1.4}
+.ch-s{font-size:12px;color:#9a948a}
+.ch-bd{padding:18px 22px 22px}
+.cb{background:#f7f4f0;border-radius:12px;padding:17px;margin-bottom:15px;font-size:14px;line-height:1.95;color:#4a453e}
+.cb strong{color:#1a1814;font-weight:500}
+.bl{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:15px}
+.bl li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#4a453e;line-height:1.75}
+.bi{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px}
+.cl{border-left:3px solid;padding:13px 15px;border-radius:0 10px 10px 0;margin-bottom:15px;font-size:14px;line-height:1.9;color:#4a453e}
+.cl strong{color:#1a1814;font-weight:500}
+.yc{border-radius:10px;padding:14px;border:.5px solid}
+.yc-t{font-size:11px;letter-spacing:2px;font-weight:500;margin-bottom:9px}
+.yc-l{list-style:none;display:flex;flex-direction:column;gap:7px}
+.yc-l li{font-size:13px;display:flex;gap:8px;align-items:flex-start;line-height:1.65}
+.yc-l li::before{content:'→';flex-shrink:0}
+.pnav{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 15px;border-top:1px solid #f0ece6}
+.nb{background:transparent;border:1px solid #ddd;border-radius:100px;padding:8px 16px;font-size:12px;color:#6b6560;cursor:pointer;transition:all .2s}
+.nb:hover{background:#f7f4f0}
+.nb:disabled{opacity:.3;cursor:default}
+.pi{font-size:12px;color:#9a948a}
+/* Stamp */
+.sp{padding:22px}
+.sp-l{font-size:11px;letter-spacing:3px;color:#9a948a;margin-bottom:4px}
+.sp-h{font-size:19px;font-weight:500;color:#1a1814;margin-bottom:6px}
+.sp-s{font-size:13px;color:#9a948a;margin-bottom:20px;line-height:1.75}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px}
+.si{border:1.5px dashed #b0a898;border-radius:11px;padding:13px 10px;cursor:pointer;text-align:center;position:relative;background:#fff;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.si.on{border-style:solid;border-color:#2c3e6b;background:#e8eaf4}
+.se{font-size:22px;margin-bottom:5px;display:block}
+.sl{font-size:11px;color:#9a948a;line-height:1.4;display:block}
+.si.on .sl{color:#2c3e6b}
+.sc{position:absolute;top:6px;right:8px;font-size:13px;color:#2c3e6b;display:none}
+.si.on .sc{display:block}
+.more-btn{display:block;width:100%;background:#2c3e6b;color:#fff;border:none;border-radius:12px;padding:16px;font-size:14px;cursor:pointer;margin-bottom:16px;letter-spacing:1px;transition:all .2s}
+.more-btn:hover{background:#3a5080}
+.sr{text-align:center;padding:18px;background:#2c3e6b;border-radius:12px;display:none}
+.sr.on{display:block}
+.sr-t{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.5);margin-bottom:7px}
+.sr-n{font-size:16px;font-weight:500;color:#fff;margin-bottom:7px;line-height:1.5}
+.sr-m{font-size:13px;color:rgba(255,255,255,.7);line-height:1.85}
+/* Final */
+.fp{background:#2c3e6b;border-radius:18px;padding:40px 26px;text-align:center;box-shadow:0 4px 32px rgba(44,62,107,.18)}
+.fp-l{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.38);margin-bottom:12px}
+.fp-t{font-size:22px;font-weight:500;color:#fff;line-height:1.5;margin-bottom:8px}
+.fp-e{font-size:12px;color:rgba(255,255,255,.32);margin-bottom:22px}
+.fp-div{width:38px;height:1px;background:rgba(255,255,255,.2);margin:0 auto 22px}
+.fp-p{font-size:14px;color:rgba(255,255,255,.72);line-height:2.05;margin:0 auto 26px;max-width:340px}
+.kr{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.kw{border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.62);letter-spacing:1px}
+.ig{font-size:12px;color:rgba(255,255,255,.3);letter-spacing:2px}
+.fp-nav{display:flex;justify-content:space-between;padding:14px 0 0}
+.nb-inv{background:transparent;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.55);border-radius:100px;padding:8px 16px;font-size:12px;cursor:pointer}
+.nb-inv:hover{background:rgba(255,255,255,.08)}
+/* Detail guide */
+.dg-wrap{background:#fff;border-radius:18px;box-shadow:0 2px 20px rgba(0,0,0,.07);overflow:hidden}
+.dg-hd{padding:22px 22px 16px;border-bottom:1px solid #f0ece6;background:#2c3e6b}
+.dg-hd-t{font-size:18px;font-weight:500;color:#fff;margin-bottom:4px}
+.dg-hd-s{font-size:12px;color:rgba(255,255,255,.55)}
+.dg-body{padding:0}
+.dg-section{border-bottom:1px solid #f0ece6}
+.dg-section:last-child{border-bottom:none}
+.dg-acc{width:100%;background:transparent;border:none;padding:16px 22px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.dg-acc:hover{background:#f7f4f0}
+.dg-acc-t{font-size:14px;font-weight:500;color:#1a1814;display:flex;align-items:center;gap:10px}
+.dg-acc-icon{font-size:20px;flex-shrink:0}
+.dg-arrow{font-size:12px;color:#9a948a;transition:transform .2s;flex-shrink:0}
+.dg-acc.open .dg-arrow{transform:rotate(180deg)}
+.dg-content{display:none;padding:0 22px 18px}
+.dg-content.open{display:block}
+.dg-lead{font-size:14px;line-height:1.9;color:#4a453e;margin-bottom:14px}
+.dg-lead strong{color:#1a1814;font-weight:500}
+.dg-items{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.dg-items li{display:flex;gap:10px;font-size:13px;color:#4a453e;line-height:1.7;align-items:flex-start}
+.dg-items li .tag{font-size:11px;background:#e8eaf4;color:#2c3e6b;border-radius:6px;padding:2px 8px;flex-shrink:0;margin-top:2px;font-weight:500}
+.dg-items li .tag.ng{background:#faeae5;color:#c44a2e}
+.dg-items li .tag.ok{background:#eaf2e0;color:#5a7a3a}
+.dg-box{border-radius:10px;padding:13px 15px;font-size:13px;line-height:1.8;margin-bottom:12px}
+.dg-box.blue{background:#e8eaf4;color:#2c3e6b}
+.dg-box.red{background:#faeae5;color:#c44a2e}
+.dg-box.green{background:#eaf2e0;color:#5a7a3a}
+.dg-box.gold{background:#fdf5e0;color:#c49a2a}
+.phrase-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.phrase-card{background:#f7f4f0;border-radius:10px;padding:12px;text-align:center}
+.phrase-jp{font-size:16px;font-weight:500;color:#1a1814;margin-bottom:3px}
+.phrase-ro{font-size:11px;color:#9a948a;margin-bottom:5px}
+.phrase-en{font-size:12px;color:#4a453e}
+.dg-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 15px;border-top:1px solid #f0ece6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="dots" id="dots"></div>
+  <div id="pgs"></div>
+</div>
+<script>
+const LANGS={
+  ja:{
+    code:'ja',label:'日本語',
+    coverLabel:'宿泊者の方へ',coverTitle:'日本の心へ、ようこそ',coverSub:'The Spirit of Japan',
+    coverP:'これはルールブックではありません。<br>日本人が大切にしている「考え方」を<br>知っていただくための、ご招待状です。<br><br>皆さんが日本を訪れてくださることを、<br>日本人は心から嬉しく思っています。',
+    startBtn:'読み始める →',yct:'あなたにできること',
+    back:'← 戻る',next:'次へ →',stampNav:'スタンプ',toEnd:'最後のページへ →',toStart:'↩ 最初へ',
+    stampLabel:'EXPERIENCE PASSPORT',stampH:'日本を体験できましたか？',
+    stampS:'体験できたものをタップしてください。6つ全部埋まると「良き旅人」に認定されます。',
+    moreBtn:'🗺️ もっと詳しく知りたい方はこちら →',
+    certT:'CERTIFIED',certN:'✦ 良き旅人 — Good Neighbour Traveller ✦',
+    certM:'あなたは旅行者としてだけでなく、この地域の一員として日本を体験しました。その心を、ぜひあなたの国へ持ち帰ってください。',
+    finalLabel:'ありがとうございました',finalTitle:'たった一晩でも、\nあなたはこの町の住人です',finalEn:'Be a Local for One Night',
+    finalP:'ここにいる間、あなたは旅行者ではありません。\n隣の家族の、庭を手入れするお年寄りの、\n窓から手を振る子どもの——お隣さんです。\n\nここで出会った価値観を、\nお土産としてではなく、生き方として\n持ち帰っていただけたら嬉しいです。',
+    keywords:['敬意 Respect','和 Harmony','おもてなし','もったいない'],
+    ichiGo:'一期一会 — この瞬間は、二度と来ない',
+    stamps:['入口で靴を脱いだ','ゴミ箱まで持ち歩いた','近所のために静かにした','日本語で「ありがとう」を言った','日本文化を誰かに伝えた','地域の人に親切にした'],
+    detailTitle:'詳細ガイド',detailSub:'日本をもっと深く知るために',
+    detailBack:'← ガイドに戻る',
+    details:[{icon:'📷',title:'写真撮影のマナー',
+       lead:'日本では、写真撮影に関して暗黙のルールがあります。知らずに違反すると、相手を深く傷つけることがあります。',
+       items:[
+         {tag:'大切',text:'保育園・幼稚園・小学校の近くでの撮影は、一声かけてから。子どもたちの日常を守ることが、地域への敬意につながります。撮影したいときは保護者や先生に「写真を撮ってもいいですか？」と聞いてみてください'},
+         {tag:'NG',text:'人の顔が写る写真を無断で撮影・SNSに投稿する'},
+         {tag:'NG',text:'店内・飲食店での撮影（禁止表示がなくても一声かける）'},
+         {tag:'NG',text:'寺社の本殿・仏像・神輿の撮影（表示を必ず確認）'},
+         {tag:'OK',text:'風景・建物・食事は基本OK。ただし人が映り込む場合は配慮'},
+         {tag:'OK',text:'撮影前に「写真を撮ってもいいですか？」と聞く——笑顔で聞けば大抵OK'},
+       ],
+       boxes:[
+         {type:'gold',text:'💡 撮影OKかどうか迷ったら：スタッフに「Photo OK?」と聞くだけで十分です。断られることもありますが、それぞれに大切にしている思いや事情があります。笑顔で受け入れることが、いちばんの敬意です'}
+       ]},
+      {icon:'🏠',title:'畳の歩き方',
+       lead:'畳の縁（へり）を踏まないのは、日本独特のマナーです。なぜでしょうか？',
+       items:[
+         {tag:'理由',text:'畳の縁には家紋や家の格式が刺繍されていたため、踏むことは「家を踏みにじる」行為とされていた'},
+         {tag:'現代',text:'現在でも「礼儀を知らない人」と見られることがある'},
+         {tag:'注意',text:'和室全体が清浄な場所——靴下のまま、または素足で入る'},
+       ],
+       boxes:[
+         {type:'green',text:'✓ 部屋に入ったら縁を避けて歩く\n✓ 荷物は畳の上ではなく棚や台の上に置く\n✓ 座るときは正座またはあぐら（くつろいでいいと言われたら）'}
+       ]},
+      {icon:'⛩️',title:'神社・お寺での過ごし方',
+       lead:'神社とお寺は観光地ではなく、今も多くの人が祈りを捧げる神聖な場所です。',
+       items:[
+         {tag:'鳥居',text:'鳥居は神様の世界への入口。くぐるときは軽く会釈をする。真ん中は神様の通り道なので、端を歩く'},
+         {tag:'手水',text:'境内に入る前に手水舎（ちょうずや）で手を清める。右手→左手→口の順'},
+         {tag:'参拝',text:'神社：二礼二拍手一礼。お寺：合掌して静かに礼'},
+         {tag:'写真',text:'本殿・仏像の撮影は禁止の場合が多い。必ず表示を確認する'},
+       ],
+       boxes:[
+         {type:'blue',text:'📸 写真を撮る前に「No Photography」の表示がないか確認\n🔇 境内では静かに。大声・走り回りは避ける\n💰 お賽銭は投げずにそっと入れる'}
+       ]},
+      {icon:'🛍️',title:'お店・飲食店でのマナー',
+       lead:'日本のお店には独自のマナーがあります。知っておくと、より快適に過ごせます。',
+       items:[
+         {tag:'呼び方',text:'店員を呼ぶときは「すみません」と声をかける。手を軽く挙げながら目を合わせると伝わりやすい'},
+         {tag:'お金',text:'お金は直接手渡しせず、トレーに置く。これが日本の標準的な受け渡し方法'},
+         {tag:'チップ',text:'日本にチップの文化はない。置いて帰ると店員が困惑することがある'},
+         {tag:'値切り',text:'定価が基本。値切り交渉は一般的ではない'},
+         {tag:'言葉',text:'日本語が話せなくても大丈夫。メニューを指差す、スマホの翻訳アプリを見せる——相手も工夫してくれる'},
+       ],
+       boxes:[
+         {type:'green',text:'🗣️ 使える一言\n・「すみません」— 呼びかけ・謝罪どちらにも使える\n・「これをください」— これ（コレ）＋ください\n・「いくらですか？」— いくら（イクラ）？\n・「ありがとう」— どこでも通じる魔法の言葉'}
+       ]},
+      {icon:'🚃',title:'公共交通機関のマナー',
+       lead:'電車・バスは日本の日常の中心です。暗黙のルールを知ることで、周りに溶け込めます。',
+       items:[
+         {tag:'優先席',text:'シルバーシート（優先席）は高齢者・妊婦・怪我人のために空けておく。混んでいなくても座らないのがマナー'},
+         {tag:'リュック',text:'混雑時はリュックを前に抱えるか、棚の上に置く。背負ったまま乗ると周囲に迷惑'},
+         {tag:'通話',text:'車内での通話は禁止。イヤホンの音漏れにも注意'},
+         {tag:'飲食',text:'新幹線以外での飲食は控えめに。匂いの強いものは避ける'},
+         {tag:'乗降',text:'降りる人が先。ドアが開いたら左右に分かれて待ち、降車が終わってから乗る'},
+       ],
+       boxes:[
+         {type:'blue',text:'🎒 混雑している電車でのチェックリスト\n□ リュックは前に抱えている\n□ イヤホンの音が漏れていない\n□ 通話していない\n□ 優先席付近でスマホをマナーモードに'}
+       ]},
+      {icon:'🍱',title:'食のマナー',
+       lead:'日本の食事には、感謝の気持ちが込められた作法があります。',
+       items:[
+         {tag:'いただきます',text:'食事の前に「いただきます」と言う。命をいただくことへの感謝の言葉'},
+         {tag:'ごちそうさま',text:'食後は「ごちそうさまでした」。作ってくれた人・食材への感謝'},
+         {tag:'箸のNG',text:'箸を立てる（死を連想）、箸渡し（葬儀の作法）、皿を箸で引き寄せる——これらは失礼にあたる'},
+         {tag:'食べ残し',text:'残すことは「もったいない」。食べられる量だけ注文する'},
+       ],
+       boxes:[
+         {type:'gold',text:'🥢 箸が難しければ「お箸の代わりにフォークをいただけますか？」と聞いてOK\n→ May I have a fork instead of chopsticks?'}
+       ]},
+      {icon:'💴',title:'お金・買い物のマナー',
+       lead:'日本のお金の受け渡しには独自の作法があります。',
+       items:[
+         {tag:'トレー',text:'レジではお金をトレーに置く。直接手渡しすることはほとんどない'},
+         {tag:'現金',text:'日本はまだ現金文化が強い。クレジットカードが使えない小さなお店も多い'},
+         {tag:'袋',text:'レジ袋は有料（2〜5円程度）。「袋はいりません」＝「Bag not needed」'},
+         {tag:'消費税',text:'表示価格に消費税（10%）が含まれている場合と別の場合がある。確認を'},
+       ],
+       boxes:[
+         {type:'blue',text:'💡 カード払いができるか確認したいとき\n→「Do you accept credit cards?」\n→ カードを見せながら「カード、OK?」でも通じます'}
+       ]},
+      {icon:'🆘',title:'困ったときの対処法',
+       lead:'旅先でのトラブルも、準備があれば慌てずに対処できます。',
+       items:[
+         {tag:'迷子',text:'交番（こうばん）を探す。青いランタンマークが目印。警察官が地図で案内してくれる'},
+         {tag:'救急',text:'救急・火事：119番。警察：110番。英語対応も可能'},
+         {tag:'病院',text:'「JNTO（日本政府観光局）」の多言語コールセンター：050-3816-2787（24時間）'},
+         {tag:'紛失',text:'パスポート紛失→大使館へ。財布紛失→最寄りの交番へ。日本では落とし物が戻ることが多い'},
+       ],
+       boxes:[
+         {type:'red',text:'🚨 緊急連絡先\n・救急・火事：119\n・警察：110\n・旅行者向け相談：050-3816-2787（24時間・多言語）'}
+       ],
+       phrases:[
+         {jp:'助けてください',ro:'Tasukete kudasai',en:'Please help me'},
+         {jp:'迷いました',ro:'Mayoimashita',en:'I am lost'},
+         {jp:'病院はどこですか',ro:'Byōin wa doko?',en:'Where is the hospital?'},
+         {jp:'ありがとう',ro:'Arigatou',en:'Thank you'},
+         {jp:'すみません',ro:'Sumimasen',en:'Excuse me'},
+         {jp:'わかりません',ro:'Wakarimasen',en:"I don't understand"},
+       ]}],
+    chapters:[
+      {n:'第1章',h:'「私」より「みんな」— 和（わ）',s:'Harmony',a:'#2c3e6b',al:'#e8eaf4',
+       lead:'日本には古くから大切にされてきた価値観があります。それが<strong>「和」</strong>です。「自分が自由にしたい」よりも「周りの人が気持ちよく過ごせるか」を先に考える——その積み重ねが、日本の日常をつくっています。',
+       bh:[['🚃','電車の中では静かに過ごす'],['🧍','誰も見ていなくても、きちんと列に並ぶ'],['🗑️','ゴミ箱がなければ、ゴミは自分で持ち帰る'],['🤫','住宅街や深夜は、声のトーンを落とす']],
+       cl:'日本の街が清潔なのは清掃員が多いからではありません。一人ひとりが「自分のことは自分で」と思っているからです。<strong>それが「和」の、いちばん身近な姿です。</strong>',
+       yc:['共有スペースでは声のボリュームを少し落としてみる','列があれば、最後尾に並ぶ','買ったお店でゴミを捨てる——それが日本人の基本的な考え方です']},
+      {n:'第2章',h:'なぜゴミ箱が少ないの？',s:'自分のゴミは自分で持ち帰る',a:'#5a7a3a',al:'#eaf2e0',
+       lead:'日本を訪れた外国人が最も驚くことのひとつが、<strong>街にゴミ箱がほとんどない</strong>こと。それでも街は清潔です。「自分が出したものは自分が責任を持つ」という考え方が文化として根づいているからです。',
+       bh:[['🛍️','多くの日本人はゴミを持ち帰るための袋を携帯している'],['♻️','ゴミは燃えるゴミ・プラスチック・紙・瓶などに分別する'],['🧹','学校では生徒自身が教室を掃除する——清潔さは習慣として身につくもの']],
+       cl:'美しい街並みは誰かが特別に維持しているわけではありません。何百万人もの人が毎日の小さな行動で守っているのです。<strong>あなたも今日から、その一員です。</strong>',
+       yc:['小さな袋を持ち歩いて、ゴミは自分のバッグへ','どうしても途中で捨てたいときは、コンビニや飲食店のスタッフに一声かけてから','宿泊施設のゴミは分別方法に沿って——わからなければ施設のスタッフへ連絡を']},
+      {n:'第3章',h:'おもてなし',s:'言葉にしなくても、相手のことを考える',a:'#4a8fa8',al:'#e4f2f7',
+       lead:'「おもてなし」は「サービス」とは違います。相手が何を望んでいるかを言葉にされる前に察して自然に行動する——<strong>見返りを求めず、ただ相手のために動く心</strong>のことです。',
+       bh:[['🏨','旅館のスタッフが、口に出していないのに好みを覚えている'],['🚄','新幹線の清掃員が車両に入るとき・出るときにお辞儀をする'],['🛬','空港のスタッフが指差しではなく一緒に目的地まで歩いてくれる']],
+       cl:'おもてなしは仕事の義務ではなく心のあり方です。そのような心で迎えられたとき、<strong>静かに目を合わせて「ありがとうございます」と言う——それだけで十分な対話になります。</strong>',
+       yc:['カフェを出るとき、椅子を少し整えてみる','ドアはそっと閉める','床のゴミを拾う——次の人へのおもてなしです','「ありがとう」をスタッフに伝えてみる']},
+      {n:'第4章',h:'静けさは優しさ',s:'音を立てないことが、思いやりになる',a:'#2c3e6b',al:'#e8eaf4',
+       lead:'日本人にとって静かにすることは「冷たさ」ではありません。<strong>「周りの人への配慮」</strong>です。音を立てないことが「あなたのことを気にかけています」という言葉のないメッセージになります。',
+       bh:[['📵','電車内での通話は避ける——小声でも周囲には十分聞こえている'],['🌙','夜10時以降の住宅街では声のトーンを落とす'],['🏢','共用廊下やロビーでは静かに移動する']],
+       cl:'この施設の周りには本当の生活があります。早起きのお年寄り、学校へ行く子ども、夜遅く帰ってくる人。<strong>あなたの「静けさ」が、その人たちへの贈り物になります。</strong>',
+       yc:['夜10時以降は繁華街以外では声を落とす——住宅街や施設周辺は特に','通話は屋外か個室で','静けさをぜひ楽しんでください']},
+      {n:'第5章',h:'靴を脱ぐ理由',s:'外と内を分ける、日本の結界',a:'#c44a2e',al:'#faeae5',
+       lead:'靴を脱ぐのは清潔さだけのためではありません。玄関は<strong>「外（そと）」と「内（うち）」を分ける境界線</strong>です。その一線を越えることは、パブリックな世界からプライベートな聖域へ入ることを意味します。',
+       bh:[['👟','玄関の段差で靴を脱ぎ、きれいに揃えて置く'],['🧦','室内用スリッパが用意されている場合は使用する'],['🏠','畳や木の床は「清浄な場所」として扱われている']],
+       cl:'玄関で靴を脱ぐとき、それは単なるルールへの従順ではありません。<strong>「この空間を大切にします」という言葉のない宣言です。</strong>',
+       yc:['玄関の段差（框）で靴を脱ぐ','脱いだ靴はつま先を外側に向けて揃える','スリッパはトイレ専用のものと使い分ける']},
+      {n:'第6章',h:'温泉のルールはなぜある？',s:'温泉はお風呂ではなく、文化です',a:'#4a8fa8',al:'#e4f2f7',
+       lead:'温泉はプールでもジャグジーでもありません。日本に古くから伝わる<strong>共同の儀式</strong>です。全員が気持ちよく過ごすためのルールが存在します。',
+       bh:[['🚿','湯船に入る前にかけ湯または洗い場で体を洗う'],['🏊','タオルは湯船の中に入れない'],['🔇','会話は小声で'],['📵','浴室内での撮影・スマートフォンの使用は禁止']],
+       cl:'温泉は日本文化のいちばん内側にある体験のひとつです。<strong>正しい心持ちで入れば——それだけで、ひとつの旅が完結します。</strong>',
+       yc:['初めての場合はフロントで事前に確認を','ゆっくり入って、その静けさを持ち帰ってください']},
+      {n:'第7章',h:'もったいない',s:'すべてのものに、価値がある',a:'#c49a2a',al:'#fdf5e0',
+       lead:'<strong>「もったいない」</strong>は英語に直訳できない言葉です。食べ物・物・時間——それらを無駄にすることへの惜しむ気持ち。後悔と感謝と「すべてには価値がある」という信念が込められています。',
+       bh:[['🍱','食事は残さず食べる——作った人への感謝がそこにある'],['🔧','物は壊れたら捨てるのではなく直す'],['💧','水や電気は使わないときは切る']],
+       cl:'「もったいない」は日本の職人技が何世代も受け継がれる理由のひとつです。<strong>この感覚を少しでも持ち帰ってもらえれば、世界は少し変わるかもしれません。</strong>',
+       yc:['食べられる量だけ注文する','部屋の備品は大切な贈り物を扱うように使う','出るときは照明を消す']},
+      {n:'第8章',h:'あなたが泊まるのは地域の中です',s:'ここには、本当の生活があります',a:'#5a7a3a',al:'#eaf2e0',
+       lead:'この施設の周りはホテル街ではありません。<strong>本当の人が、本当の日常を生きている場所です。</strong>朝学校へ向かう子ども。庭を手入れするお年寄り。夜遅く仕事から帰ってくる人。あなたは今、その日常の中に招かれています。',
+       bh:[['👵','すれ違いにお辞儀をされたら——軽く頭を下げるだけで十分'],['🧒','この街の子どもたちは外国からの旅人を好奇心と開かれた心で見ています'],['🌿','街の清潔さ・静けさ・安心感はすべて地域の人たちが守り続けているもの']],
+       cl:'丁寧に旅をする人は<strong>「旅行者」という存在のイメージを変えていきます。この街は、それを見ています。</strong>',
+       yc:['お辞儀を返す','住宅街では声を落とす','笑顔で挨拶する——言葉がなくても伝わります']},
+    ]
+  },
+  en:{
+    code:'en',label:'English',
+    coverLabel:'Guest Guide',coverTitle:'The Spirit of Japan',coverSub:'日本の心へ、ようこそ',
+    coverP:'This is not a list of rules.<br>It is an invitation — to step a little deeper<br>into Japan, to understand why people here<br>live the way they do.<br><br>We are so glad you are here.',
+    startBtn:'Begin reading →',yct:'You can try this',
+    back:'← Back',next:'Next →',stampNav:'Stamp',toEnd:'Finish →',toStart:'↩ Start',
+    stampLabel:'EXPERIENCE PASSPORT',stampH:'I Experienced Japan',
+    stampS:'Tap each one as you experience it. Complete all six to earn your Recognition as a "Good Neighbour Traveller".',
+    moreBtn:'🗺️ Want to learn more? Deep-dive guide →',
+    certT:'CERTIFIED',certN:'✦ Good Neighbour Traveller ✦',
+    certM:'You experienced Japan not just as a visitor, but as a temporary member of this community. Please carry this spirit home with you.',
+    finalLabel:'Thank you',finalTitle:'Be a Local\nfor One Night',finalEn:'たった一晩でも、あなたはこの町の住人です',
+    finalP:'For the time you are here, you are not a tourist.\nYou are a neighbour — to the family next door,\nto the elderly man who tends the garden,\nto the child who waves from the window.\n\nCarry what you discovered here\nnot as a souvenir, but as a way of being.',
+    keywords:['Respect','Harmony — 和','Omotenashi','Mottainai'],
+    ichiGo:'一期一会 — This moment will not come again.',
+    stamps:['Removed my shoes at the entrance','Carried my litter to a bin','Kept quiet for the neighbours','Said ありがとう in Japanese','Shared Japanese culture with someone','Showed kindness to a local'],
+    detailTitle:'Deep-Dive Guide',detailSub:'Learn more about Japan',
+    detailBack:'← Back to guide',
+    details:[{icon:'📷',title:'Photography Etiquette',
+       lead:'Japan has strong unspoken rules around photography. Unknowingly breaking them can cause real offence.',
+       items:[
+         {tag:'Care',text:'Near schools and nurseries, pause before taking photos. Children\'s daily lives deserve the same privacy you would want for your own family. If you\'d like to photograph, a simple "May I take a photo?" to a parent or teacher is all it takes'},
+         {tag:'Never',text:'Photograph people\'s faces without permission, or post them on social media'},
+         {tag:'Never',text:'Photograph inside shops or restaurants without asking first'},
+         {tag:'Never',text:'Photograph inside temple or shrine halls without checking signs'},
+         {tag:'OK',text:'Landscapes, buildings, and food are generally fine. Be mindful if people are in the frame'},
+         {tag:'Tip',text:'Just ask: "May I take a photo?" — a smile and the question is almost always enough'},
+       ],
+       boxes:[{type:'gold',text:'💡 When in doubt: ask a staff member "Photo OK?" — they will let you know. If the answer is no, accept it with a smile. Everyone has their own reasons for what they hold precious, and honouring that is the kindest thing you can do'}]},
+      {icon:'🏠',title:'Walking on Tatami',
+       lead:'Never step on the border (heri) of a tatami mat. This is one of Japan\'s most important indoor manners.',
+       items:[
+         {tag:'Why',text:'The borders were historically embroidered with family crests — stepping on them was seen as disrespecting the household'},
+         {tag:'Today',text:'Still considered rude and a sign of poor manners'},
+         {tag:'Note',text:'Tatami rooms are sacred spaces — enter in socks or bare feet only'},
+       ],
+       boxes:[{type:'green',text:'✓ Walk around the borders, never on them\n✓ Place bags on shelves, not on the tatami\n✓ Sit in seiza (kneel) or cross-legged if invited to relax'}]},
+      {icon:'⛩️',title:'Visiting Shrines & Temples',
+       lead:'Shrines and temples are not tourist attractions — they are active places of worship visited daily by local people.',
+       items:[
+         {tag:'Torii',text:'The torii gate is the entrance to the gods\' realm. Bow slightly before passing through. Walk to the side — the centre is reserved for the gods'},
+         {tag:'Purification',text:'Wash hands at the temizuya (water basin) before entering: right hand, left hand, then rinse your mouth'},
+         {tag:'Prayer',text:'Shrines: two bows, two claps, one bow. Temples: press palms together and bow in silence'},
+         {tag:'Photos',text:'Photography is often prohibited inside main halls. Always check for signs'},
+       ],
+       boxes:[{type:'blue',text:'📸 Check for "No Photography" signs before taking photos\n🔇 Keep voices low — no running or loud conversation\n💰 Place coins gently in the offering box, don\'t throw them'}]},
+      {icon:'🛍️',title:'Shops & Restaurants',
+       lead:'Japanese shops have their own etiquette. Knowing these makes every interaction smoother.',
+       items:[
+         {tag:'Calling',text:'To get a server\'s attention, say "Sumimasen" (すみません) while making eye contact and raising your hand slightly'},
+         {tag:'Payment',text:'Place money on the tray at the register — do not hand it directly to the cashier'},
+         {tag:'Tipping',text:'There is no tipping culture in Japan. Leaving money will confuse or embarrass the staff'},
+         {tag:'Bargaining',text:'Prices are fixed. Bargaining is not standard practice'},
+         {tag:'Language',text:'Don\'t worry if you can\'t speak Japanese. Point at the menu, use a translation app — staff will work with you'},
+       ],
+       boxes:[{type:'green',text:'🗣️ Useful words\n・すみません (Sumimasen) — Excuse me / Sorry\n・これをください (Kore wo kudasai) — I\'ll have this\n・いくらですか (Ikura desu ka?) — How much?\n・ありがとう (Arigatou) — Thank you'}]},
+      {icon:'🚃',title:'Public Transport',
+       lead:'Trains and buses are the heart of Japanese daily life. A few simple habits make you a considerate passenger.',
+       items:[
+         {tag:'Priority',text:'Silver seats (priority seats) are for elderly, pregnant, and injured passengers — leave them free even if the train is empty'},
+         {tag:'Backpack',text:'In crowded trains, hold your backpack in front or place it on the overhead rack'},
+         {tag:'Calls',text:'Phone calls are not made on trains. Keep music inaudible to others'},
+         {tag:'Food',text:'Eating on local trains is generally avoided. Strong smells are especially unwelcome'},
+         {tag:'Boarding',text:'Let passengers exit first. Stand to the side of the doors and board only after everyone has exited'},
+       ],
+       boxes:[{type:'blue',text:'🎒 Checklist for crowded trains\n□ Backpack held in front\n□ Music not audible to others\n□ Not on a phone call\n□ Phone on silent near priority seats'}]},
+      {icon:'🍱',title:'Dining Manners',
+       lead:'Japanese dining is filled with small rituals of gratitude.',
+       items:[
+         {tag:'Itadakimasu',text:'Say "Itadakimasu" before eating — it expresses gratitude for the food and all who prepared it'},
+         {tag:'Gochisousama',text:'Say "Gochisousama deshita" after finishing — thanking the cook and the ingredients'},
+         {tag:'Chopsticks',text:'Never stick chopsticks upright in rice (funeral rite), never pass food chopstick-to-chopstick (also funeral custom), and don\'t use them to drag plates'},
+         {tag:'Finish',text:'Try to finish your meal — leaving food is considered wasteful (mottainai)'},
+       ],
+       boxes:[{type:'gold',text:'🥢 If chopsticks are difficult, it\'s completely fine to ask:\n"May I have a fork instead of chopsticks?"'}]},
+      {icon:'💴',title:'Money & Shopping',
+       lead:'Japan\'s payment customs are unique — here is what to expect.',
+       items:[
+         {tag:'Tray',text:'At the register, place your money on the small tray provided — not directly in the cashier\'s hand'},
+         {tag:'Cash',text:'Japan is still largely cash-based. Many small shops and restaurants do not accept cards'},
+         {tag:'Bags',text:'Shopping bags are paid for (¥2–5). You can say "Bag not needed" or shake your head'},
+         {tag:'Tax',text:'Consumption tax is 10%. Prices may or may not include it — check the label'},
+       ],
+       boxes:[{type:'blue',text:'💡 To ask if cards are accepted:\n→ "Do you accept credit cards?"\n→ Or show your card and say "Card, OK?"'}]},
+      {icon:'🆘',title:'When Things Go Wrong',
+       lead:'With a little preparation, most travel problems can be handled calmly.',
+       items:[
+         {tag:'Lost',text:'Find a koban (交番) — a small police box marked with a blue lantern. Officers will help with maps and directions'},
+         {tag:'Emergency',text:'Ambulance & Fire: 119. Police: 110. English assistance is available'},
+         {tag:'Hospital',text:'JNTO multilingual hotline: 050-3816-2787 (24 hours, multiple languages)'},
+         {tag:'Lost item',text:'Lost passport → your embassy. Lost wallet → nearest koban. Japan has an exceptionally high rate of lost items being returned'},
+       ],
+       boxes:[{type:'red',text:'🚨 Emergency numbers\n・Ambulance & Fire: 119\n・Police: 110\n・Travel helpline: 050-3816-2787 (24hrs, multilingual)'}],
+       phrases:[
+         {jp:'助けてください',ro:'Tasukete kudasai',en:'Please help me'},
+         {jp:'迷いました',ro:'Mayoimashita',en:'I am lost'},
+         {jp:'病院はどこですか',ro:'Byōin wa doko?',en:'Where is hospital?'},
+         {jp:'ありがとう',ro:'Arigatou',en:'Thank you'},
+         {jp:'すみません',ro:'Sumimasen',en:'Excuse me'},
+         {jp:'わかりません',ro:'Wakarimasen',en:"I don't understand"},
+       ]}],
+    chapters:[
+      {n:'Chapter 1',h:'Harmony — 和 (Wa)',s:'"We" before "I"',a:'#2c3e6b',al:'#e8eaf4',lead:'Japan has a deep value at its core: <strong>Wa — harmony</strong>. It means choosing "how can I make those around me comfortable?" before "what do I want to do?"',bh:[['🚃','Keeping quiet on trains'],['🧍','Waiting in line even when no one watches'],['🗑️','Carrying litter when there is no bin'],['🤫','Lowering your voice late at night']],cl:'Japanese streets are pristine not because of more cleaners, but because everyone quietly takes responsibility for their own space. <strong>This is Wa in action.</strong>',yc:['Keep your voice low in shared spaces','Join the back of any queue you see','Dispose of rubbish at the shop where you bought it — that is the basic Japanese way of thinking']},
+      {n:'Chapter 2',h:'Why so few bins?',s:'"I made this, so I take care of it"',a:'#5a7a3a',al:'#eaf2e0',lead:'Almost <strong>no public bins</strong> — yet the streets are spotless. The reason: "This is my trash, so I take responsibility for it."',bh:[['🛍️','Most carry a small bag for their own rubbish'],['♻️','Rubbish is sorted carefully'],['🧹','Children clean their own classrooms']],cl:'These pristine streets are maintained by millions of small invisible acts. <strong>You are now part of that story.</strong>',yc:['Carry a small bag and put your rubbish inside until you get back','If you really need to dispose of something on the way, ask a convenience store or restaurant staff first','For sorting guidance at your accommodation, contact the facility staff']},
+      {n:'Chapter 3',h:'Omotenashi',s:'Anticipating what you need before you ask',a:'#4a8fa8',al:'#e4f2f7',lead:'Omotenashi means <strong>anticipating what someone needs before they ask</strong> — offering it without expecting anything in return.',bh:[['🏨','A ryokan attendant who remembers how you take your tea'],['🚄','Shinkansen cleaners who bow entering and exiting each car'],['🛬','Airport staff who walk you to your gate']],cl:'Omotenashi is a mindset, not a job. When served with this spirit, <strong>a sincere "arigatou" is the whole conversation.</strong>',yc:['Straighten your chair before leaving a café','Close doors quietly','Pick up litter — omotenashi for the next person','Say "arigatou" to staff today']},
+      {n:'Chapter 4',h:'Silence is kindness',s:'Not making noise is a gift',a:'#2c3e6b',al:'#e8eaf4',lead:'Keeping quiet is not coldness — it is consideration. <strong>Not making noise says: "I am aware of you."</strong>',bh:[['📵','No phone calls on trains'],['🌙','Voices drop after 10 pm in residential areas'],['🏢','Move quietly in shared corridors']],cl:'Our neighbours share these walls. <strong>Your quiet presence is a gift to them and every traveller who follows.</strong>',yc:['After 10 pm, lower your voice outside busy entertainment areas — residential streets and around your accommodation especially','Step outside for phone calls','Enjoy the quiet — it is one of Japan\'s gifts']},
+      {n:'Chapter 5',h:'Why we remove shoes',s:'The threshold between outside and inside',a:'#c44a2e',al:'#faeae5',lead:'The entrance marks the boundary between <strong>outside (soto) and inside (uchi)</strong> — from public world to sacred private space.',bh:[['👟','Remove shoes at the entrance step'],['🧦','Use provided slippers; separate ones for bathrooms'],['🏠','Tatami floors are treated as clean, sacred surfaces']],cl:'Removing your shoes says: <strong>"I respect this space."</strong>',yc:['Remove shoes before the entrance step','Place them neatly, facing the door','Keep bathroom slippers in the bathroom']},
+      {n:'Chapter 6',h:'The onsen',s:'An ancient shared ritual',a:'#4a8fa8',al:'#e4f2f7',lead:'The onsen is one of Japan\'s oldest <strong>shared rituals</strong>. The customs exist so that everyone can feel comfortable.',bh:[['🚿','Wash your body before entering the water'],['🏊','Keep towel out of the bath'],['🔇','Speak quietly'],['📵','No phones or cameras']],cl:'Entering the onsen with the right heart <strong>is itself a form of travel.</strong>',yc:['Ask the front desk before your first visit','Enter slowly, carry the stillness with you']},
+      {n:'Chapter 7',h:'Mottainai',s:'Everything has inherent worth',a:'#c49a2a',al:'#fdf5e0',lead:'<strong>Mottainai</strong> — deep sadness at waste. Food, objects, time. Regret, gratitude, and the belief that everything has value.',bh:[['🍱','Finish your meal — leaving food disrespects those who prepared it'],['🔧','Repair rather than discard'],['💧','Turn off lights and water when not in use']],cl:'<strong>To practice mottainai is to see the world differently.</strong>',yc:['Order only what you can finish','Handle room items with care','Turn off the lights when you leave']},
+      {n:'Chapter 8',h:'You are in a neighbourhood',s:'Real people live here',a:'#5a7a3a',al:'#eaf2e0',lead:'<strong>Real people live here</strong> — families, elderly neighbours, people commuting home late. You have been welcomed into their world.',bh:[['👵','A small bow back costs nothing and means everything'],['🧒','Children here see visitors with curiosity and openness'],['🌿','The cleanliness and safety here is maintained by the community']],cl:'When you travel thoughtfully, <strong>you change the story of how the world sees travellers.</strong>',yc:['Return a bow','Keep your voice low on residential streets','Smile — it transcends language']},
+    ]
+  },
+  zh:{
+    code:'zh',label:'中文',
+    coverLabel:'住客指南',coverTitle:'欢迎来到日本',coverSub:'The Spirit of Japan',
+    coverP:'这不是一本规则手册。<br>这是一份邀请函——<br>邀请您更深入地了解日本，<br>感受日本人珍视的生活方式。<br><br>能接待您，我们感到由衷的高兴。',
+    startBtn:'开始阅读 →',yct:'您可以尝试这样做',
+    back:'← 返回',next:'下一页 →',stampNav:'打卡',toEnd:'前往最后一页 →',toStart:'↩ 回到首页',
+    stampLabel:'体验护照',stampH:'您体验了日本文化吗？',
+    stampS:'请点击您已体验的项目。集满6个打卡，即可获得「良邻旅行者」认证。',
+    moreBtn:'🗺️ 想了解更多？点击详细指南 →',
+    certT:'认证完成',certN:'✦ 良邻旅行者 — Good Neighbour Traveller ✦',
+    certM:'您不仅作为游客，更作为这片社区的一员体验了日本。请将这份心意带回您的国家。',
+    finalLabel:'感谢您的到来',finalTitle:'就算只住一晚，\n您也是这里的居人',finalEn:'Be a Local for One Night',
+    finalP:'在这里的每一刻，您不是游客，\n而是邻居。\n\n请把在这里感受到的价值观\n不作为纪念品，而作为一种生活方式带回家。',
+    keywords:['尊重 Respect','和谐 Harmony','款待 Omotenashi','珍惜 Mottainai'],
+    ichiGo:'一期一会 — 此刻，不会再来',
+    stamps:['在入口处脱鞋了','将垃圾带到了垃圾桶','为了邻居保持了安静','用日语说了「ありがとう」','向他人介绍了日本文化','向当地人表达了善意'],
+    detailTitle:'详细指南',detailSub:'深入了解日本文化',
+    detailBack:'← 返回指南',
+    details:[{icon:'📷',title:'拍照礼仪',lead:'日本有关于拍照的不成文规则。不了解可能会严重冒犯他人。',items:[{tag:'用心',text:'在保育园、幼儿园、小学附近拍照时，请先打个招呼。保护孩子们的日常生活，是对这片社区的尊重。想拍摄时，向家长或老师说一声「可以拍照吗？」就好'},
+         {tag:'禁止',text:'未经许可拍摄他人面孔或发布到社交媒体'},{tag:'禁止',text:'在商店、餐厅内拍照（即使没有禁止标识也应先询问）'},{tag:'禁止',text:'在寺庙、神社本殿内拍照（请确认标识）'},{tag:'可以',text:'风景、建筑、食物通常可以拍。注意不要将他人拍入镜头'},{tag:'建议',text:'拍摄前询问「可以拍照吗？」——微笑着问，大多数情况都会被允许'}],boxes:[{type:'gold',text:'💡 不确定时：向工作人员询问「Photo OK?」即可。如果对方拒绝，请微笑接受。每个人都有自己珍视的事物和想法，尊重这一点，是最好的礼仪'}]},
+      {icon:'🏠',title:'榻榻米的礼仪',lead:'不要踩踏榻榻米的边框（花边）。这是日本重要的室内礼仪之一。',items:[{tag:'原因',text:'边框上历史上绣有家徽，踩踏被视为对家族的不敬'},{tag:'现代',text:'至今仍被认为是不懂礼仪的表现'},{tag:'注意',text:'和室是神圣场所——请穿袜子或赤脚进入'}],boxes:[{type:'green',text:'✓ 绕开边框行走，不要踩踏\n✓ 行李放在架子上，不要放在榻榻米上\n✓ 坐下时请正坐或盘腿'}]},
+      {icon:'⛩️',title:'参拜神社和寺庙',lead:'神社和寺庙不只是观光地，也是当地人日常祈祷的神圣场所。',items:[{tag:'鸟居',text:'鸟居是通往神明世界的入口。经过时轻轻鞠躬，走两侧，中央是神明的通道'},{tag:'净手',text:'进入前在手水舍净手：右手→左手→漱口'},{tag:'参拜',text:'神社：二礼二拍手一礼。寺庙：合掌静默鞠躬'},{tag:'拍照',text:'本殿·佛像内通常禁止拍照，请务必确认标识'}],boxes:[{type:'blue',text:'📸 拍照前确认是否有「禁止摄影」的标识\n🔇 保持安静，不要大声喧哗或奔跑\n💰 轻轻将硬币放入奉纳箱，不要投掷'}]},
+      {icon:'🛍️',title:'商店和餐厅礼仪',lead:'了解日本店铺的礼仪，让每次互动更加顺畅。',items:[{tag:'招呼',text:'招呼服务员时说「すみません」，同时轻轻举手并对视'},{tag:'付款',text:'将钱放在收银台的托盘上，不要直接递给收银员'},{tag:'小费',text:'日本没有给小费的文化。留下小费会让店员感到困惑'},{tag:'砍价',text:'日本基本是一口价，不习惯讨价还价'},{tag:'语言',text:'不会日语也没关系。指着菜单或使用翻译软件，对方会配合您'}],boxes:[{type:'green',text:'🗣️ 实用词汇\n・すみません——打招呼/道歉均可\n・これをください——请给我这个\n・いくらですか——多少钱？\n・ありがとう（阿里嘎多）——谢谢'}]},
+      {icon:'🚃',title:'公共交通礼仪',lead:'电车和公交是日本日常生活的中心。遵守这些礼仪，融入当地生活。',items:[{tag:'优先席',text:'银色座位（优先席）为老人、孕妇、伤者保留，即使车厢不拥挤也不要坐'},{tag:'背包',text:'拥挤时将背包抱在胸前或放到行李架上'},{tag:'通话',text:'车内禁止打电话，注意耳机音量不要外漏'},{tag:'饮食',text:'除新干线外，尽量避免在车内饮食，尤其是气味较重的食物'},{tag:'上下车',text:'先下后上。门开后分站两侧等待，待乘客下车完毕再上车'}],boxes:[{type:'blue',text:'🎒 拥挤电车检查清单\n□ 背包抱在胸前\n□ 耳机没有外漏\n□ 未在打电话\n□ 在优先席附近将手机设为静音'}]},
+      {icon:'🍱',title:'用餐礼仪',lead:'日本的饮食中蕴含着感恩的作法。',items:[{tag:'いただきます',text:'饭前说「いただきます」——感谢食物和制作它的人'},{tag:'ごちそうさま',text:'饭后说「ごちそうさまでした」——感谢厨师和食材'},{tag:'筷子禁忌',text:'不把筷子插在饭上（与祭祀有关）、不用筷子传递食物（葬礼习俗）、不用筷子拖拉餐具'},{tag:'剩饭',text:'尽量吃完——剩饭是「もったいない（可惜）」的行为'}],boxes:[{type:'gold',text:'🥢 如果筷子使用困难，可以这样说：\n「May I have a fork instead of chopsticks?」'}]},
+      {icon:'💴',title:'金钱和购物礼仪',lead:'日本独特的付款方式，提前了解会更顺畅。',items:[{tag:'托盘',text:'在收银台将钱放在小托盘上，不要直接交到收银员手中'},{tag:'现金',text:'日本现金文化依然强烈，很多小店不接受信用卡'},{tag:'购物袋',text:'塑料袋需要付费（约2-5日元）。可以说「Bag not needed」'},{tag:'消费税',text:'消费税为10%，价格可能含税也可能不含，请确认'}],boxes:[{type:'blue',text:'💡 想确认是否可以刷卡时：\n→「Do you accept credit cards?」\n→ 拿出卡片说「Card, OK?」也能传达'}]},
+      {icon:'🆘',title:'遇到困难时',lead:'做好准备，大多数旅行中的问题都可以冷静应对。',items:[{tag:'迷路',text:'寻找交番（派出所）——以蓝色灯笼为标志。警察会用地图为您指路'},{tag:'紧急',text:'救护车·消防：119。警察：110。可以用英语沟通'},{tag:'医院',text:'JNTO多语言服务热线：050-3816-2787（24小时）'},{tag:'遗失物',text:'护照遗失→联系大使馆。钱包遗失→去最近的交番。日本失物找回率极高'}],boxes:[{type:'red',text:'🚨 紧急联系方式\n・救护车·消防：119\n・警察：110\n・旅游咨询热线：050-3816-2787（24小时·多语言）'}],phrases:[{jp:'助けてください',ro:'Tasukete kudasai',en:'请帮帮我'},{jp:'迷いました',ro:'Mayoimashita',en:'我迷路了'},{jp:'病院はどこですか',ro:'Byōin wa doko?',en:'医院在哪里？'},{jp:'ありがとう',ro:'Arigatou',en:'谢谢'},{jp:'すみません',ro:'Sumimasen',en:'打扰一下'},{jp:'わかりません',ro:'Wakarimasen',en:'我不明白'}]}],
+    chapters:[
+      {n:'第一章',h:'「和」—— 先想到他人',s:'Harmony',a:'#2c3e6b',al:'#e8eaf4',lead:'日本有一个深植于文化中的价值观——<strong>「和」</strong>。相比起先考虑「我想怎样」，日本人更倾向于先考虑「周围的人舒适吗？」',bh:[['🚃','在电车上保持安静'],['🧍','即使没人看，也认真排队'],['🗑️','找不到垃圾桶时，自己把垃圾带走'],['🤫','在住宅区或深夜，降低说话声音']],cl:'日本的街道干净，不是因为有更多清洁工，而是每个人默默对自己负责。<strong>这就是「和」最贴近日常的样子。</strong>',yc:['在共享空间稍微降低声音','看到队伍就到最后排队','在购买商品的店铺丢弃垃圾——这是日本人的基本思考方式']},
+      {n:'第二章',h:'为什么垃圾桶这么少？',s:'自己产生的垃圾，自己负责',a:'#5a7a3a',al:'#eaf2e0',lead:'街上<strong>几乎没有公共垃圾桶</strong>，但街道却非常干净。原因——「自己产生的垃圾，自己负责」已深入文化。',bh:[['🛍️','很多日本人随身携带小袋子'],['♻️','垃圾需按可燃垃圾、塑料、纸张等分类'],['🧹','学生自己打扫教室']],cl:'美丽的街道是数百万人每天的小行动共同守护的。<strong>您也是守护者中的一员。</strong>',yc:['随身携带一个小袋子，将垃圾放入自己的包中带走','如果途中实在需要丢弃，请先向便利店或餐厅的工作人员确认','住宿设施的垃圾请按分类方法处理——不明白的话请联系设施工作人员']},
+      {n:'第三章',h:'款待之心 Omotenashi',s:'不需言语，也能感知对方的需求',a:'#4a8fa8',al:'#e4f2f7',lead:'「款待」不同于一般「服务」。<strong>在对方开口之前就察觉需求，不求回报地行动。</strong>',bh:[['🏨','旅馆服务员默默记住了您的喜好'],['🚄','新干线清洁员进出车厢时都会鞠躬'],['🛬','机场工作人员亲自带您走到目的地']],cl:'款待是心态，不是职责。<strong>真诚地说一声「谢谢」——这就是完整的交流。</strong>',yc:['离开咖啡馆时整理椅子','轻轻关门','捡起地上的垃圾','对服务员说「ありがとう」']},
+      {n:'第四章',h:'安静是一种善意',s:'不发出声音，是对他人的体贴',a:'#2c3e6b',al:'#e8eaf4',lead:'保持安静不是「冷漠」，而是<strong>「对他人的体贴」</strong>。不制造噪音，是一种无声的信号。',bh:[['📵','在电车上避免打电话'],['🌙','夜间10点后，在住宅区降低声音'],['🏢','在共用走廊安静走动']],cl:'住宿设施周围有真实的生活。<strong>您的「安静」，是送给他们的礼物。</strong>',yc:['晚上10点以后，除繁华街道外请降低说话声音——住宅区和住宿设施周边尤其注意','打电话请到室外','请享受这份宁静']},
+      {n:'第五章',h:'为什么要脱鞋？',s:'区分「外」与「内」的日本界限',a:'#c44a2e',al:'#faeae5',lead:'玄关是<strong>「外（公共）」与「内（私人）」的分界线</strong>。跨过这道线，意味着进入私人的神圣空间。',bh:[['👟','在玄关台阶处脱鞋并整齐摆放'],['🧦','如有提供室内拖鞋请穿上'],['🏠','榻榻米和木地板是「神圣且干净的地面」']],cl:'脱鞋是一种无声的表达：<strong>「我会珍视这个空间。」</strong>',yc:['在玄关台阶处脱鞋','鞋尖朝外整齐摆放','厕所拖鞋只在厕所内使用']},
+      {n:'第六章',h:'温泉为什么有规定？',s:'温泉是文化，不只是泡澡',a:'#4a8fa8',al:'#e4f2f7',lead:'温泉是日本古老的<strong>共同仪式</strong>。这些规定是为了让所有人都能舒适地享受。',bh:[['🚿','进入前先在冲洗区清洗身体'],['🏊','毛巾不可放入浴池'],['🔇','请低声交谈'],['📵','禁止拍照和使用手机']],cl:'以正确的心态进入温泉，<strong>仅此一点，就能让这次旅行变得完整。</strong>',yc:['初次使用前请向前台咨询','慢慢浸泡，将这份宁静带走']},
+      {n:'第七章',h:'もったいない——珍惜',s:'万物皆有其价值',a:'#c49a2a',al:'#fdf5e0',lead:'<strong>「もったいない（Mottainai·珍惜）」</strong>——对浪费食物、物品、时间的惋惜。蕴含遗憾、感谢与「万物皆有价值」的信念。',bh:[['🍱','吃完食物——剩饭是对厨师的不敬'],['🔧','修缮而非丢弃'],['💧','不用时关灯关水']],cl:'<strong>如果您能将这种感受带回自己的国家，世界或许会因此稍有改变。</strong>',yc:['只点自己能吃完的食物','像对待珍贵礼物一样使用房间物品','离开时关掉灯']},
+      {n:'第八章',h:'您住的地方是社区的一部分',s:'这里，有真实的生活',a:'#5a7a3a',al:'#eaf2e0',lead:'<strong>真实的人，正在过着真实的日常生活。</strong>上学的孩子，打理小院的老人，深夜下班回家的人。',bh:[['👵','对方鞠躬时——轻轻点头回礼就足够'],['🧒','这条街上的孩子以好奇和开放的心看待旅人'],['🌿','街道的干净与安全感，都是社区居民共同守护的']],cl:'用心旅行的人，<strong>正在改变「旅行者」这一形象。这片街区，看到了这一切。</strong>',yc:['如果有人鞠躬，请回礼','在住宅区压低说话声音','微笑打招呼']},
+    ]
+  },
+  ko:{
+    code:'ko',label:'한국어',
+    coverLabel:'투숙객 안내',coverTitle:'일본의 정신을 담은 초대장',coverSub:'The Spirit of Japan',
+    coverP:'이것은 규칙 목록이 아닙니다.<br>일본인이 소중히 여기는 생각과<br>생활 방식을 느껴보시기를<br>바라는 마음으로 만든 초대장입니다.<br><br>여러분의 방문을 진심으로 환영합니다.',
+    startBtn:'읽기 시작하기 →',yct:'이렇게 해보세요',
+    back:'← 뒤로',next:'다음 →',stampNav:'스탬프',toEnd:'마지막 페이지로 →',toStart:'↩ 처음으로',
+    stampLabel:'체험 여권',stampH:'일본 문화를 체험하셨나요?',
+    stampS:'체험한 항목을 탭해주세요. 6개를 모두 채우면 「좋은 이웃 여행자」로 인정됩니다.',
+    moreBtn:'🗺️ 더 자세히 알고 싶은 분은 이쪽으로 →',
+    certT:'인증 완료',certN:'✦ 좋은 이웃 여행자 — Good Neighbour Traveller ✦',
+    certM:'여러분은 여행자로서뿐만 아니라, 이 지역의 일원으로서 일본을 체험하셨습니다.',
+    finalLabel:'감사합니다',finalTitle:'단 하루 밤이라도,\n당신은 이 마을의 주민입니다',finalEn:'Be a Local for One Night',
+    finalP:'이곳에 머무는 동안,\n당신은 여행자가 아닙니다.\n이웃입니다.\n\n이곳에서 만난 가치관을\n기념품이 아닌 삶의 방식으로\n가지고 돌아가 주시면 기쁘겠습니다.',
+    keywords:['존중 Respect','화합 Harmony','오모테나시','모타이나이'],
+    ichiGo:'일기일회 — 이 순간은 다시 오지 않습니다',
+    stamps:['입구에서 신발을 벗었다','쓰레기통까지 쓰레기를 가지고 다녔다','이웃을 위해 조용히 했다','일본어로 「ありがとう」라고 했다','일본 문화를 누군가에게 전했다','지역 주민에게 친절을 베풀었다'],
+    detailTitle:'상세 가이드',detailSub:'일본을 더 깊이 알기 위해',
+    detailBack:'← 가이드로 돌아가기',
+    details:[{icon:'📷',title:'사진 촬영 예절',lead:'일본에는 사진 촬영에 관한 불문율이 있습니다. 모르고 위반하면 상대방에게 깊은 상처를 줄 수 있습니다.',items:[{tag:'배려',text:'보육원·유치원·초등학교 근처에서는 촬영 전에 한마디 건네주세요. 아이들의 일상을 지키는 것이 지역에 대한 존중입니다. 촬영하고 싶을 때는 보호자나 선생님께 「사진을 찍어도 될까요?」라고 물어봐 주세요'},
+         {tag:'금지',text:'무단으로 사람 얼굴을 촬영하거나 SNS에 올리는 것'},{tag:'금지',text:'가게나 음식점 내에서 촬영하기 전에 확인하기'},{tag:'금지',text:'신사·사찰 내부 촬영은 표시 확인 필수'},{tag:'가능',text:'풍경·건물·음식은 기본적으로 OK. 사람이 찍히지 않도록 배려'},{tag:'팁',text:'촬영 전에 「사진 찍어도 될까요?」라고 물어보면 대부분 허락합니다'}],boxes:[{type:'gold',text:'💡 망설여질 때는: 직원에게 「Photo OK?」라고 물어보면 됩니다. 거절당하더라도 기분 나쁜 표정은 짓지 마세요. 저마다 소중히 여기는 생각과 사정이 있습니다. 미소로 받아들이는 것이 가장 큰 존중입니다'}]},
+      {icon:'🏠',title:'다다미 걷기 예절',lead:'다다미의 가장자리(헤리)를 밟지 않는 것은 일본의 중요한 실내 예절입니다.',items:[{tag:'이유',text:'가장자리에는 가문의 문장이 수놓아져 있었으며, 밟는 것은 가문을 모욕하는 행위로 여겨졌습니다'},{tag:'현대',text:'지금도 예의 없는 행동으로 여겨질 수 있습니다'},{tag:'주의',text:'다다미방은 신성한 공간입니다——양말이나 맨발로 입실하세요'}],boxes:[{type:'green',text:'✓ 가장자리를 피해서 걷기\n✓ 짐은 선반 위에, 다다미 위에는 놓지 않기\n✓ 앉을 때는 정좌 또는 책상다리'}]},
+      {icon:'⛩️',title:'신사·사찰 방문 예절',lead:'신사와 사찰은 관광지가 아닌, 지역 주민들이 매일 기도를 드리는 신성한 장소입니다.',items:[{tag:'도리이',text:'도리이는 신의 세계로 들어가는 입구입니다. 통과할 때 가볍게 인사하고, 중앙은 신의 통로이므로 가장자리로 걸어가세요'},{tag:'손 씻기',text:'경내에 들어가기 전 데미즈야에서 손을 씻습니다: 오른손→왼손→입 헹굼'},{tag:'참배',text:'신사: 두 번 절, 두 번 박수, 한 번 절. 사찰: 합장하고 조용히 인사'},{tag:'사진',text:'본전·불상 촬영은 금지된 경우가 많습니다. 반드시 표시를 확인하세요'}],boxes:[{type:'blue',text:'📸 사진 찍기 전에 「촬영 금지」 표시 확인\n🔇 경내에서는 조용히, 뛰거나 큰 소리는 삼가세요\n💰 헌금은 조용히 넣어주세요, 던지지 마세요'}]},
+      {icon:'🛍️',title:'가게·음식점 예절',lead:'일본 가게만의 예절을 알면 더욱 편안하게 이용할 수 있습니다.',items:[{tag:'부르기',text:'직원을 부를 때는 「すみません」이라고 말하며 가볍게 손을 들고 눈을 맞추세요'},{tag:'결제',text:'돈은 트레이에 올려놓으세요. 직접 건네는 것은 일반적이지 않습니다'},{tag:'팁',text:'일본에는 팁 문화가 없습니다. 돈을 놓고 가면 직원이 당황할 수 있습니다'},{tag:'흥정',text:'정찰제가 기본입니다. 가격 흥정은 일반적이지 않습니다'},{tag:'언어',text:'일본어를 못해도 괜찮습니다. 메뉴를 가리키거나 번역 앱을 보여주세요'}],boxes:[{type:'green',text:'🗣️ 유용한 표현\n・すみません——부르기/사과 모두 사용 가능\n・これをください——이것 주세요\n・いくらですか——얼마예요?\n・ありがとう——감사합니다'}]},
+      {icon:'🚃',title:'대중교통 예절',lead:'전철과 버스는 일본 일상의 중심입니다. 이 예절을 알면 현지인처럼 이용할 수 있습니다.',items:[{tag:'우선석',text:'실버 시트(우선석)는 노인·임산부·부상자를 위한 자리입니다. 혼잡하지 않아도 앉지 않는 것이 예절입니다'},{tag:'배낭',text:'혼잡할 때는 배낭을 앞으로 안거나 선반 위에 올려주세요'},{tag:'통화',text:'차 안에서 전화통화는 금지입니다. 이어폰 소리 유출에도 주의하세요'},{tag:'음식',text:'신칸센 외에는 차 안에서 음식을 삼가세요'},{tag:'승하차',text:'내리는 사람 먼저입니다. 문이 열리면 양쪽으로 나뉘어 서서 기다리세요'}],boxes:[{type:'blue',text:'🎒 혼잡한 전철 체크리스트\n□ 배낭을 앞으로 안고 있다\n□ 이어폰 소리가 새지 않는다\n□ 전화통화를 하지 않는다\n□ 우선석 근처에서 매너모드로 설정'}]},
+      {icon:'🍱',title:'식사 예절',lead:'일본의 식사에는 감사의 마음이 담긴 작법이 있습니다.',items:[{tag:'いただきます',text:'식사 전에 「이타다키마스」라고 말합니다——음식과 만든 사람에 대한 감사의 표현'},{tag:'ごちそうさま',text:'식후에 「고치소우사마데시타」라고 말합니다——요리사와 식재료에 감사'},{tag:'젓가락 금기',text:'밥에 젓가락 꽂기(장례 의식), 젓가락으로 음식 전달(장례 풍습), 젓가락으로 그릇 끌기는 실례입니다'},{tag:'남기기',text:'음식을 남기는 것은 「もったいない」. 먹을 수 있는 양만 주문하세요'}],boxes:[{type:'gold',text:'🥢 젓가락이 어려우면:\n「May I have a fork instead of chopsticks?」라고 물어보세요'}]},
+      {icon:'💴',title:'금전·쇼핑 예절',lead:'일본만의 결제 방식을 미리 알아두면 더욱 편리합니다.',items:[{tag:'트레이',text:'계산대에서 돈은 트레이에 올려놓으세요. 직접 건네는 경우는 거의 없습니다'},{tag:'현금',text:'일본은 아직 현금 문화가 강합니다. 작은 가게는 카드를 받지 않는 경우가 많습니다'},{tag:'봉투',text:'비닐봉지는 유료입니다(약 2~5엔). 「Bag not needed」라고 말하면 됩니다'},{tag:'소비세',text:'소비세는 10%입니다. 가격에 포함된 경우와 별도인 경우가 있으니 확인하세요'}],boxes:[{type:'blue',text:'💡 카드 결제 가능 여부를 확인하고 싶을 때:\n→「Do you accept credit cards?」\n→ 카드를 보여주며 「Card, OK?」도 통합니다'}]},
+      {icon:'🆘',title:'어려운 상황에 처했을 때',lead:'준비가 되어 있다면 대부분의 여행 중 문제를 차분하게 대처할 수 있습니다.',items:[{tag:'길을 잃음',text:'고반(교番·파출소)을 찾으세요——파란 등이 표시입니다. 경찰관이 지도로 안내해 드립니다'},{tag:'응급',text:'구급·화재: 119. 경찰: 110. 영어 대응도 가능합니다'},{tag:'병원',text:'JNTO 다국어 상담 전화: 050-3816-2787 (24시간)'},{tag:'분실물',text:'여권 분실→대사관. 지갑 분실→가까운 파출소. 일본은 분실물이 돌아오는 경우가 매우 많습니다'}],boxes:[{type:'red',text:'🚨 긴급 연락처\n・구급·화재: 119\n・경찰: 110\n・여행자 상담: 050-3816-2787 (24시간·다국어)'}],phrases:[{jp:'助けてください',ro:'Tasukete kudasai',en:'도와주세요'},{jp:'迷いました',ro:'Mayoimashita',en:'길을 잃었어요'},{jp:'病院はどこですか',ro:'Byōin wa doko?',en:'병원은 어디에 있나요?'},{jp:'ありがとう',ro:'Arigatou',en:'감사합니다'},{jp:'すみません',ro:'Sumimasen',en:'실례합니다'},{jp:'わかりません',ro:'Wakarimasen',en:'이해하지 못했어요'}]}],
+    chapters:[
+      {n:'제1장',h:'「나」보다 「우리」— 和(와)',s:'Harmony',a:'#2c3e6b',al:'#e8eaf4',lead:'일본에는 오랫동안 소중히 여겨온 가치관이 있습니다. <strong>「和(와)」— 화합</strong>입니다.',bh:[['🚃','전차 안에서는 조용히 한다'],['🧍','아무도 보지 않아도 줄을 서서 기다린다'],['🗑️','쓰레기통이 없으면 쓰레기를 직접 가지고 돌아간다'],['🤫','주택가나 늦은 밤에는 목소리를 낮춘다']],cl:'일본 거리가 깨끗한 것은 한 사람 한 사람이 「내 것은 내가」라고 생각하기 때문입니다. <strong>그것이 「和(와)」의 가장 친숙한 모습입니다.</strong>',yc:['공유 공간에서는 목소리를 조금 낮춰보세요','줄이 있다면 맨 뒤에 서세요','구입한 가게에서 쓰레기를 버린다——이것이 일본인의 기본적인 생각입니다']},
+      {n:'제2장',h:'왜 쓰레기통이 적을까요?',s:'내 쓰레기는 내가 책임진다',a:'#5a7a3a',al:'#eaf2e0',lead:'<strong>거리에 쓰레기통이 거의 없습니다</strong>. 그런데도 거리는 깨끗합니다. 「내가 만든 쓰레기는 내가 책임진다」는 생각이 문화로 자리 잡혀 있기 때문입니다.',bh:[['🛍️','많은 일본인이 쓰레기를 가지고 돌아가기 위한 작은 봉투를 갖고 다닌다'],['♻️','쓰레기는 가연성·플라스틱·종이 등으로 분리한다'],['🧹','학생들이 직접 교실을 청소한다']],cl:'아름다운 거리는 수백만 명의 사람들이 매일 작은 행동으로 지켜나가는 것입니다. <strong>당신도 오늘부터 그 일원입니다.</strong>',yc:['작은 봉투를 가지고 다니며 쓰레기는 자신의 가방 안에 넣어두세요','꼭 도중에 버려야 할 때는 편의점이나 음식점 직원에게 먼저 한마디 물어보세요','숙박시설의 쓰레기는 분리 방법에 따라 버려주세요——모르면 시설 직원에게 연락하세요']},
+      {n:'제3장',h:'오모테나시 おもてなし',s:'말하지 않아도 상대를 생각하는 마음',a:'#4a8fa8',al:'#e4f2f7',lead:'「오모테나시」는 단순한 「서비스」가 아닙니다. <strong>대가를 바라지 않고 오직 상대를 위해 움직이는 마음</strong>입니다.',bh:[['🏨','료칸 직원이 말하지 않았는데도 취향을 기억한다'],['🚄','신칸센 청소원이 차량 입퇴장 시 인사를 한다'],['🛬','공항 직원이 직접 목적지까지 함께 걸어준다']],cl:'오모테나시는 마음의 자세입니다. <strong>조용히 눈을 맞추며 「감사합니다」라고 말하는 것——그것만으로 충분합니다.</strong>',yc:['카페를 나올 때 의자를 살짝 정리해보세요','문을 조용히 닫으세요','직원에게 「ありがとう」라고 말해보세요']},
+      {n:'제4장',h:'조용함은 친절함',s:'소리를 내지 않는 것이 배려가 된다',a:'#2c3e6b',al:'#e8eaf4',lead:'조용히 한다는 것은 「냉담함」이 아닙니다. <strong>「주변 사람에 대한 배려」</strong>입니다.',bh:[['📵','전차 안에서는 통화를 자제한다'],['🌙','밤 10시 이후 주택가에서는 목소리를 낮춘다'],['🏢','공용 복도에서는 조용히 이동한다']],cl:'이 시설 주변에는 진짜 삶이 있습니다. <strong>당신의 「조용함」이 그들에게 드리는 선물이 됩니다.</strong>',yc:['밤 10시 이후에는 번화가 이외의 장소에서는 목소리를 낮춰주세요——주택가와 숙박시설 주변은 특히','통화는 야외나 개인 공간에서','조용함을 즐겨보세요']},
+      {n:'제5장',h:'신발을 벗는 이유',s:'안과 밖을 나누는 일본의 경계',a:'#c44a2e',al:'#faeae5',lead:'현관은 <strong>「외부(소토)」와 「내부(우치)」를 나누는 경계선</strong>입니다.',bh:[['👟','현관 문턱에서 신발을 벗고 가지런히 정리한다'],['🧦','실내용 슬리퍼가 있으면 사용한다'],['🏠','다다미와 목재 바닥은 「청결한 장소」로 다루어진다']],cl:'신발을 벗는 것은 <strong>「이 공간을 소중히 여기겠습니다」라는 말 없는 선언입니다.</strong>',yc:['현관 문턱에서 신발을 벗으세요','벗은 신발은 발끝이 바깥쪽을 향하도록 정리해두세요','화장실 슬리퍼는 화장실 안에서만 사용하세요']},
+      {n:'제6장',h:'온천에 규칙이 있는 이유',s:'온천은 목욕이 아닌 문화입니다',a:'#4a8fa8',al:'#e4f2f7',lead:'온천은 일본에 오래전부터 전해 내려오는 <strong>공동의 의식</strong>입니다.',bh:[['🚿','욕조에 들어가기 전에 몸을 씻는다'],['🏊','수건은 욕조 안에 넣지 않는다'],['🔇','대화는 작은 소리로'],['📵','욕실 내 촬영 및 스마트폰 사용은 금지']],cl:'<strong>올바른 마음으로 들어간다면——그것만으로도 하나의 여행이 완성됩니다.</strong>',yc:['처음이라면 프런트에서 미리 확인하세요','천천히 몸을 담그고, 그 고요함을 가지고 돌아가세요']},
+      {n:'제7장',h:'もったいない — 아깝다',s:'모든 것에는 가치가 있습니다',a:'#c49a2a',al:'#fdf5e0',lead:'<strong>「もったいない（아깝다）」</strong>——모든 것을 낭비하는 것에 대한 아쉬운 마음.',bh:[['🍱','음식은 남기지 않고 먹는다'],['🔧','물건은 버리지 않고 고친다'],['💧','쓰지 않을 때는 물과 전기를 끈다']],cl:'<strong>이 감각을 조금이라도 가지고 돌아간다면, 세계는 조금 달라질지도 모릅니다.</strong>',yc:['먹을 수 있는 양만 주문하세요','방의 비품은 소중한 선물을 다루듯이 사용하세요','나갈 때는 조명을 끄세요']},
+      {n:'제8장',h:'당신이 묵는 곳은 지역의 일부입니다',s:'여기에는 진짜 삶이 있습니다',a:'#5a7a3a',al:'#eaf2e0',lead:'<strong>진짜 사람들이, 진짜 일상을 살아가는 곳입니다.</strong>',bh:[['👵','스쳐 지나갈 때 인사를 받으면——가볍게 고개를 숙이는 것으로 충분합니다'],['🧒','이 마을의 아이들은 해외에서 온 여행자를 호기심과 열린 마음으로 바라보고 있습니다'],['🌿','거리의 청결함과 안전함은 지역 주민들이 지켜온 것입니다']],cl:'<strong>「여행자」라는 존재의 이미지를 바꾸어 갑니다. 이 마을은 그것을 보고 있습니다.</strong>',yc:['인사를 받으면 답례를 하세요','주택가에서는 목소리를 낮춰주세요','미소로 인사하세요']},
+    ]
+  }
+};
+
+let curLang='ja', curPage=0, showDetail=false;
+const stampStates={ja:new Array(6).fill(false),en:new Array(6).fill(false),zh:new Array(6).fill(false),ko:new Array(6).fill(false)};
+
+function setLang(code){curLang=code;curPage=0;showDetail=false;renderAll();window.scrollTo({top:0,behavior:'instant'});}
+function go(i){curPage=i;showDetail=false;renderAll();window.scrollTo({top:0,behavior:'instant'});}
+function goDetail(){showDetail=true;renderAll();window.scrollTo({top:0,behavior:'instant'});}
+function backFromDetail(){showDetail=false;renderAll();window.scrollTo({top:0,behavior:'instant'});}
+function setLangAndScroll(code){setLang(code);window.scrollTo({top:0,behavior:'instant'});}
+function ts(si){
+  stampStates[curLang][si]=!stampStates[curLang][si];
+  document.getElementById('s'+si).classList.toggle('on',stampStates[curLang][si]);
+  const allDone=stampStates[curLang].every(Boolean);
+  const sr=document.getElementById('sr');
+  if(sr) sr.classList.toggle('on',allDone);
+}
+function toggleAcc(el){
+  el.classList.toggle('open');
+  const content=el.nextElementSibling;
+  content.classList.toggle('open');
+}
+
+function renderAll(){
+  const L=LANGS[curLang];
+  const total=L.chapters.length+3;
+
+  // dots
+  const dotsEl=document.getElementById('dots');
+  dotsEl.innerHTML='';
+  if(!showDetail){
+    for(let i=0;i<total;i++){
+      const d=document.createElement('button');
+      d.className='dot'+(i===curPage?' on':'');
+      d.onclick=(function(idx){return function(){go(idx);};})(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  const c=document.getElementById('pgs');c.innerHTML='';
+
+  if(showDetail){
+    renderDetail(L,c);
+    return;
+  }
+
+  // Cover
+  const cover=document.createElement('div');
+  cover.className='pg'+(curPage===0?' on':'');
+  const lBtns=['en','zh','ko','ja'].map(lc=>`<button class="lbtn${curLang===lc?' active':''}" onclick="setLang('${lc}')">${LANGS[lc].label}</button>`).join('');
+  cover.innerHTML=`<div class="cover"><div class="mon">⛩</div><div class="cv-l">${L.coverLabel}</div><div class="cv-t">${L.coverTitle}</div><div class="cv-s">${L.coverSub}</div><p class="cv-p">${L.coverP}</p><div class="lang-row">${lBtns}</div><button class="sbtn" onclick="go(1)">${L.startBtn}</button></div>`;
+  c.appendChild(cover);
+
+  // Chapters
+  L.chapters.forEach((ch,ci)=>{
+    const idx=ci+1;
+    const p=document.createElement('div');
+    p.className='pg'+(curPage===idx?' on':'');
+    const bH=ch.bh.map(b=>`<li><span class="bi" style="background:${ch.al}">${b[0]}</span><span>${b[1]}</span></li>`).join('');
+    const yH=ch.yc.map(y=>`<li>${y}</li>`).join('');
+    p.innerHTML=`<div class="card"><div class="ch-hd"><div class="ch-n">${ch.n}</div><div class="ch-t">${ch.h}</div><div class="ch-s">${ch.s}</div></div><div class="ch-bd"><div class="cb">${ch.lead}</div><ul class="bl">${bH}</ul><div class="cl" style="border-color:${ch.a};background:${ch.al}">${ch.cl}</div><div class="yc" style="background:${ch.al};border-color:${ch.a}44"><div class="yc-t" style="color:${ch.a}">${L.yct}</div><ul class="yc-l" style="color:${ch.a}">${yH}</ul></div></div><div class="pnav"><button class="nb" onclick="go(${idx-1})">${L.back}</button><span class="pi">${idx}/${L.chapters.length}</span><button class="nb" onclick="go(${idx+1})">${L.next}</button></div></div>`;
+    c.appendChild(p);
+  });
+
+  // Stamp
+  const si=L.chapters.length+1;
+  const sp=document.createElement('div');
+  sp.className='pg'+(curPage===si?' on':'');
+  const sH=L.stamps.map((s,i)=>`<div class="si${stampStates[curLang][i]?' on':''}" id="s${i}" onclick="ts(${i})"><span class="sc">✓</span><span class="se">${['👟','🗑️','🤫','🙏','🌍','💛'][i]}</span><span class="sl">${s}</span></div>`).join('');
+  sp.innerHTML=`<div class="card"><div class="sp"><div class="sp-l">${L.stampLabel}</div><div class="sp-h">${L.stampH}</div><button class="more-btn" onclick="goDetail()">${L.moreBtn}</button><div class="sp-s">${L.stampS}</div><div class="sg">${sH}</div><div class="sr${stampStates[curLang].every(Boolean)?' on':''}" id="sr"><div class="sr-t">${L.certT}</div><div class="sr-n">${L.certN}</div><div class="sr-m">${L.certM}</div></div></div><div class="pnav"><button class="nb" onclick="go(${si-1})">${L.back}</button><span class="pi">${L.stampNav}</span><button class="nb" onclick="go(${si+1})">${L.toEnd}</button></div></div>`;
+  c.appendChild(sp);
+
+  // Final
+  const fi=L.chapters.length+2;
+  const fp=document.createElement('div');
+  fp.className='pg'+(curPage===fi?' on':'');
+  const kwH=L.keywords.map(k=>`<span class="kw">${k}</span>`).join('');
+  fp.innerHTML=`<div class="fp"><div class="fp-l">${L.finalLabel}</div><div class="fp-t">${L.finalTitle.replace(/\n/,'<br>')}</div><div class="fp-e">${L.finalEn}</div><div class="fp-div"></div><p class="fp-p">${L.finalP.replace(/\n/g,'<br>')}</p><div class="kr">${kwH}</div><div class="ig">${L.ichiGo}</div><div class="fp-nav"><button class="nb-inv" onclick="go(${fi-1})">${L.back}</button><button class="nb-inv" onclick="go(0)">${L.toStart}</button></div></div>`;
+  c.appendChild(fp);
+}
+
+function renderDetail(L,c){
+  const wrap=document.createElement('div');
+  wrap.className='pg on';
+  let sectionsHTML=L.details.map((d,di)=>{
+    const itemsHTML=d.items.map(it=>`<li><span class="tag ${it.tag==='NG'||it.tag==='禁止'||it.tag==='Never'||it.tag==='금지'?'ng':it.tag==='OK'||it.tag==='可以'||it.tag==='가능'?'ok':''}">${it.tag}</span><span>${it.text}</span></li>`).join('');
+    const boxesHTML=(d.boxes||[]).map(b=>`<div class="dg-box ${b.type}">${b.text.replace(/\n/g,'<br>')}</div>`).join('');
+    const phrasesHTML=d.phrases?`<div class="phrase-grid">${d.phrases.map(ph=>`<div class="phrase-card"><div class="phrase-jp">${ph.jp}</div><div class="phrase-ro">${ph.ro}</div><div class="phrase-en">${ph.en}</div></div>`).join('')}</div>`:'';
+    return `<div class="dg-section"><button class="dg-acc" onclick="toggleAcc(this)"><span class="dg-acc-t"><span class="dg-acc-icon">${d.icon}</span>${d.title}</span><span class="dg-arrow">▼</span></button><div class="dg-content"><p class="dg-lead">${d.lead}</p><ul class="dg-items">${itemsHTML}</ul>${boxesHTML}${phrasesHTML}</div></div>`;
+  }).join('');
+
+  wrap.innerHTML=`<div class="dg-wrap"><div class="dg-hd"><div class="dg-hd-t">🗺️ ${L.detailTitle}</div><div class="dg-hd-s">${L.detailSub}</div></div><div class="dg-body">${sectionsHTML}</div><div class="dg-nav"><button class="nb" onclick="backFromDetail()">${L.detailBack}</button><span class="pi">8 topics</span></div></div>`;
+  c.appendChild(wrap);
+}
+
+renderAll();
+</script>
+</body>
+</html>
